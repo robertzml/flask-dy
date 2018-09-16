@@ -1,9 +1,10 @@
 from mysqladapter import MysqlAdapter
 from model.person import Person
+import time
 
 class PersonRepository:
 
-    def ParseJson(self, js):
+    def parse_json(self, js):
         """
         解析上传数据包，并保存新用户
         :param js: JSON数据包
@@ -30,7 +31,7 @@ class PersonRepository:
             if result == 1:
                 find_count += 1
 
-        print('找到%d个新用户' % find_count)
+        print('总共%d个用户，找到%d个新用户' % (count, find_count))
 
         mysql.close()
 

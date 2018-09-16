@@ -2,12 +2,7 @@ from flask import Flask, request, jsonify, g
 from logging.config import dictConfig
 from personrepository import PersonRepository
 import json
-import time
-import asyncio
-#from gevent import monkey
-#from gevent.pywsgi import WSGIServer
 
-#monkey.patch_all()
 
 dictConfig({
     'version': 1,
@@ -43,8 +38,6 @@ def index():
 @app.route('/hello')
 def hello_world():
     # app.logger.info('hello')
-
-    asyncio.sleep(10)
     return 'Hello World!'
 
 
@@ -65,17 +58,16 @@ def root():
 @app.route('/data', methods=['POST'])
 def comment():
     if request.method == 'POST':
-        reqstr = request.data.decode()
+        req_str = request.data.decode()
 
-        js = json.loads(reqstr)
-        # app.logger.info(reqstr)
+        js = json.loads(req_str)
+        # app.logger.info(req_str)
 
         person_repository = PersonRepository()
-        person_repository.ParseJson(js)
+        person_repository.parse_json(js)
 
     return "ok"
 
 if __name__ == '__main__':
     app.run()
-    #http_server = WSGIServer(('', 5000), app)
-    #http_server.serve_forever()
+

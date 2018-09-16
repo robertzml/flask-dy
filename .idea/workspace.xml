@@ -12,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/flask_dy$flask_dy.coverage" NAME="flask-dy Coverage Results" MODIFIED="1537102747155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask_dy$flask_dy.coverage" NAME="flask-dy Coverage Results" MODIFIED="1537107237756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -76,14 +76,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="4" />
-          <entry key="py" value="796" />
+          <entry key="py" value="1014" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="796" />
+          <entry key="Python" value="1014" />
         </counts>
       </usages-collector>
     </session>
@@ -93,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="160">
+              <caret line="8" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -105,12 +105,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/personrepository.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+            <state relative-caret-position="480">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
-                <marker date="1537101895459" expanded="true" signature="94:95" ph="..." />
-                <marker date="1537101895459" expanded="true" signature="94:100" ph="..." />
+                <marker date="1537105547978" expanded="true" signature="106:107" ph="..." />
+                <marker date="1537105547978" expanded="true" signature="106:112" ph="..." />
               </folding>
             </state>
           </provider>
@@ -214,7 +214,7 @@
   </component>
   <component name="RunManager">
     <configuration name="flask-dy" type="Python.FlaskServer" factoryName="Flask server">
-      <option name="additionalOptions" value="" />
+      <option name="additionalOptions" value="--host=0.0.0.0" />
       <option name="application" value="" />
       <module name="flask-dy" />
       <option name="target" value="$PROJECT_DIR$/app.py" />
@@ -318,8 +318,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="160">
+          <caret line="8" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
@@ -345,12 +345,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/personrepository.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        <state relative-caret-position="480">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
-            <marker date="1537101895459" expanded="true" signature="94:95" ph="..." />
-            <marker date="1537101895459" expanded="true" signature="94:100" ph="..." />
+            <marker date="1537105547978" expanded="true" signature="106:107" ph="..." />
+            <marker date="1537105547978" expanded="true" signature="106:112" ph="..." />
           </folding>
         </state>
       </provider>

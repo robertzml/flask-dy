@@ -1,7 +1,13 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, g
 from logging.config import dictConfig
 from personrepository import PersonRepository
 import json
+import time
+import asyncio
+#from gevent import monkey
+#from gevent.pywsgi import WSGIServer
+
+#monkey.patch_all()
 
 dictConfig({
     'version': 1,
@@ -30,15 +36,17 @@ dictConfig({
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def index():
     return 'Home Flask'
 
 @app.route('/hello')
 def hello_world():
-    app.logger.info('hello')
+    # app.logger.info('hello')
+
+    asyncio.sleep(10)
     return 'Hello World!'
+
 
 @app.route('/user/<username>')
 def show_user_profile(username):
@@ -69,3 +77,5 @@ def comment():
 
 if __name__ == '__main__':
     app.run()
+    #http_server = WSGIServer(('', 5000), app)
+    #http_server.serve_forever()

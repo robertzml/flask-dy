@@ -3,8 +3,12 @@ from model.person import Person
 
 class PersonRepository:
 
-    # 解析上传数据包，并保存新用户
     def ParseJson(self, js):
+        """
+        解析上传数据包，并保存新用户
+        :param js: JSON数据包
+        :return:
+        """
         count = len(js)
 
         mysql = MysqlAdapter()

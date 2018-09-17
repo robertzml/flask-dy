@@ -7,17 +7,21 @@ class PersonRepository:
     def parse_json(self, js):
         """
         解析上传数据包，并保存新用户
+        截取倒数20个
         :param js: JSON数据包
         :return:
         """
-        count = len(js)
+        upload_count = len(js)
+
+        slice = js[-20:]
+        count = len(slice)
 
         mysql = MysqlAdapter()
         mysql.open()
 
         find_count = 0
         for i in range(count):
-            dic = js[i]
+            dic = slice[i]
 
             p = Person()
             p.id = dic['uid']
@@ -31,7 +35,7 @@ class PersonRepository:
             if result == 1:
                 find_count += 1
 
-        print('总共%d个用户，找到%d个新用户' % (count, find_count))
+        print('分析%d个用户，找到%d个新用户，上传%d个用户' % (count, find_count, upload_count))
 
         mysql.close()
 

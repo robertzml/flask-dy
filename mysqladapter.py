@@ -48,11 +48,11 @@ class MysqlAdapter:
         return count
 
 
-    def insert_person(self, id, nickname, gender):
+    def insert_person(self, uid, nickname, gender):
         cur = self._db.cursor()
 
         try:
-            sql = "INSERT INTO person (id, nickname, gender) VALUES('%s', '%s', %d)" % (id, nickname, gender)
+            sql = "INSERT INTO person (uid, nickname, gender) VALUES('%s', '%s', %d)" % (uid, nickname, gender)
 
             cur.execute(sql)
             self._db.commit()

@@ -24,12 +24,12 @@ class PersonRepository:
             dic = slice[i]
 
             p = Person()
-            p.id = dic['uid']
+            p.uid = dic['uid']
             p.nickname = dic['nickname']
             p.gender = dic['gender']
             p.follower_count = -1
             p.following_count = -1
-            p.status = 0
+            p.used = 0
 
             result = p.check_save(mysql)
             if result == 1:

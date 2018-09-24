@@ -68,6 +68,22 @@ def comment():
 
     return "ok"
 
+
+@app.route('/profile', methods=['POST'])
+def profile():
+    '''
+    上传用户个人信息
+    :return:
+    '''
+    if request.method == 'POST':
+        req_str = request.data.decode()
+
+        js = json.loads(req_str)
+        app.logger.info(req_str)
+
+    return "ok"
+
+
 if __name__ == '__main__':
     app.run()
 

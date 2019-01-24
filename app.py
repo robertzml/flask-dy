@@ -1,8 +1,9 @@
 from flask import Flask, request, jsonify, g
 from logging.config import dictConfig
 from personrepository import PersonRepository
+from concurrent.futures import ThreadPoolExecutor
 import json
-
+import time
 
 dictConfig({
     'version': 1,
@@ -29,6 +30,8 @@ dictConfig({
     }
 })
 
+executor = ThreadPoolExecutor(1)
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -38,6 +41,7 @@ def index():
 @app.route('/hello')
 def hello_world():
     # app.logger.info('hello')
+    # executor.submit(do_something, 6)
     return 'Hello World!'
 
 
@@ -63,11 +67,16 @@ def comment():
         js = json.loads(req_str)
         # app.logger.info(req_str)
 
-        person_repository = PersonRepository()
-        person_repository.parse_json(js)
+        # person_repository = PersonRepository()
+        # person_repository.parse_json(js)
+
+        executor.submit(save_person, js)
 
     return "ok"
 
+def save_person(js):
+    person_repository = PersonRepository()
+    person_repository.parse_json(js)
 
 @app.route('/profile', methods=['POST'])
 def profile():
@@ -83,6 +92,9 @@ def profile():
 
     return "ok"
 
+def do_something(s):
+    time.sleep(s)
+    app.logger.info('finish')
 
 if __name__ == '__main__':
     app.run()
